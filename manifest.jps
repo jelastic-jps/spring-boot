@@ -1,0 +1,67 @@
+{
+    "jpsType": "install",
+    "jpsVersion": "0.99",
+    "id": "tomee-cluster",
+    "baseUrl": "https://raw.githubusercontent.com/jelastic-jps/spring-boot/master",
+    "logo": "/images/spring-boot-logo.png",
+    "description": "Pre-configured and ready-to-work Spring Boot Cluster with auto scaling triggers. By default connection to the cluster is secured by Jelastic SSL.",
+    "name": "Auto Scalable Spring Boot Cluster",
+    "settings": {
+        "fields": [{
+            "type": "spinner",
+            "name": "nodes",
+            "caption": "Nodes in Cluster",
+            "min": 1,
+            "max": 10,
+            "default": 1
+        }, {
+            "name": "state",
+            "type": "radio-fieldset",
+            "values": {
+                "clean": "Clean Cluster",
+                "deploy": "Deploy JAR"
+            },
+            "default": "clean",
+            "showIf": {
+                "deploy": {
+                    "name": "jar",
+                    "type": "string",
+                    "caption": "JAR Url",
+                    "default": "https://raw.githubusercontent.com/jelastic-jps/spring-boot/master/jar/spring-boot-demo.jar",
+                    "required": true,
+                    "vtype": "url"
+                }
+            }
+        }]
+    },
+    "nodes": [{
+        "nodeType": "nginx",
+        "cloudlets": 16,
+        "nodeGroup": "lb"
+    }, {
+        "nodeType": "springboot",
+        "cloudlets": 16,
+        "nodeGroup": "cp",
+        "count": "${settings.nodes}"
+    }],
+    "ssl": true,
+    "onInstall": {
+        "if ('${settings.state}' == 'deploy')": {
+            "deploy": {
+                "archive": "${settings.jar}",
+                "name": "jar",
+                "context": "ROOT"
+            }
+        },
+        "script": "/scripts/autoscaling-triggers.js",
+        "params": {
+            "nodeGroup": "cp",
+            "upLimit": "10",
+            "downLimit": "${settings.nodes}"
+        }
+    },
+    "success": {
+        "text": "/text/success.md",
+        "email": "/text/success.md"
+    }
+}
