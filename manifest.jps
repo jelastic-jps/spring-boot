@@ -13,7 +13,7 @@
             "caption": "Nodes in Cluster",
             "min": 1,
             "max": 10,
-            "default": 1
+            "default": 2
         }, {
             "name": "state",
             "type": "radio-fieldset",
