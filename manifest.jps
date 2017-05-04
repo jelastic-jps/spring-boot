@@ -55,7 +55,7 @@
             }
         }
     }, {
-        "script": "/scripts/autoscaling-triggers.js",
+        "script": "https://raw.githubusercontent.com/jelastic-jps/spring-boot/master/scripts/autoscaling-triggers.js",
         "params": {
             "nodeGroup": "cp",
             "upLimit": "10",
@@ -63,7 +63,7 @@
         }
     }],
     "success": {
-        "text": "/text/success.md",
-        "email": "/text/success.md"
+        "text": "https://raw.githubusercontent.com/jelastic-jps/spring-boot/master/text/success.md",
+        "email": "https://raw.githubusercontent.com/jelastic-jps/spring-boot/master/text/success.md"
     }
 }
