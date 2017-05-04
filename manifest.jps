@@ -3,7 +3,7 @@
     "jpsVersion": "0.99",
     "id": "tomee-cluster",
     "baseUrl": "https://raw.githubusercontent.com/jelastic-jps/spring-boot/master",
-    "logo": "/images/spring-boot-logo.png",
+    "logo": "https://raw.githubusercontent.com/jelastic-jps/spring-boot/master/images/spring-boot-logo.png",
     "description": "Pre-configured and ready-to-work Spring Boot Cluster with auto scaling triggers. By default connection to the cluster is secured by Jelastic SSL.",
     "name": "Auto Scalable Spring Boot Cluster",
     "settings": {
@@ -34,6 +34,7 @@
             }
         }]
     },
+    "engine": "java8",
     "nodes": [{
         "nodeType": "nginx",
         "cloudlets": 16,
