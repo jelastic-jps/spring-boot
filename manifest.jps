@@ -1,7 +1,7 @@
 {
     "jpsType": "install",
     "jpsVersion": "0.99",
-    "id": "tomee-cluster",
+    "id": "spring-boot-cluster",
     "baseUrl": "https://raw.githubusercontent.com/jelastic-jps/spring-boot/master",
     "logo": "https://raw.githubusercontent.com/jelastic-jps/spring-boot/master/images/spring-boot-logo.png",
     "description": "Pre-configured and ready-to-work Spring Boot Cluster with auto scaling triggers. By default connection to the cluster is secured by Jelastic SSL.",
@@ -46,21 +46,22 @@
         "count": "${settings.nodes}"
     }],
     "ssl": true,
-    "onInstall": {
+    "onInstall": [{
         "if ('${settings.state}' == 'deploy')": {
             "deploy": {
                 "archive": "${settings.jar}",
                 "name": "jar",
                 "context": "ROOT"
             }
-        },
+        }
+    }, {
         "script": "/scripts/autoscaling-triggers.js",
         "params": {
             "nodeGroup": "cp",
             "upLimit": "10",
             "downLimit": "${settings.nodes}"
         }
-    },
+    }],
     "success": {
         "text": "/text/success.md",
         "email": "/text/success.md"
