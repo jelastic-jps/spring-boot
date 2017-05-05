@@ -62,7 +62,7 @@
         }
     }],
     "success": {
-        "text": "https://raw.githubusercontent.com/jelastic-jps/spring-boot/master/text/success.md",
-        "email": "https://raw.githubusercontent.com/jelastic-jps/spring-boot/master/text/success.md"
+        "text": "The created TomEE cluster is available via <a href='${env.url}' target='_blank'>${env.envName}</a><br/><br/>If something does not work as expected, please check the logs for more details or submit a question to <a href='https://stackoverflow.com/questions/tagged/jelastic' target='_blank'>Jelastic community</a>",
+        "email": "The created TomEE cluster is available via <a href='${env.url}' target='_blank'>${env.envName}</a><br/><br/>If something does not work as expected, please check the logs for more details or submit a question to <a href='https://stackoverflow.com/questions/tagged/jelastic' target='_blank'>Jelastic community</a>"
     }
 }
