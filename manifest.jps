@@ -1,6 +1,6 @@
 {
     "jpsType": "install",
-    "jpsVersion": "0.99",
+    "jpsVersion": "1.0",
     "id": "spring-boot-cluster",
     "logo": "https://raw.githubusercontent.com/jelastic-jps/spring-boot/master/images/spring-boot-logo.png",
     "description": "Pre-configured and ready-to-work Spring Boot Cluster with auto scaling triggers. By default connection to the cluster is secured by Jelastic SSL.",
