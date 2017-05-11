@@ -5,6 +5,9 @@
     "logo": "https://raw.githubusercontent.com/jelastic-jps/spring-boot/master/images/spring-boot-logo.png",
     "description": "Pre-configured and ready-to-work Spring Boot Cluster with auto scaling triggers. By default connection to the cluster is secured by Jelastic SSL.",
     "name": "Auto Scalable Spring Boot Cluster",
+    "categories": [
+			"apps/clusters"
+	],
     "settings": {
         "fields": [{
             "type": "spinner",
