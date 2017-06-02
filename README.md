@@ -12,7 +12,7 @@ The current Spring Boot solution is implemented using the following software sta
 - *Load balancer* (LB) - dockerized template with **_NGINX 1.10.1_**
 - *Application server* (AS) - native template with **_Spring Boot 1.5.2_** on top of **_Java 8_** 
 
-Herewith, each LB and AS container has the default [vertical scaling](https://docs.jelastic.com/automatic-vertical-scaling) range up to **16 cloudlets** (equals to 2 GiB of RAM and 6.4 GHz of CPU per node) for the required resources to be automatically allocated upon the necessity. In addition, connection to the cluster is secured with [Jelastic SSL](https://docs.jelastic.com/jelastic-ssl). 
+Herewith, each LB and AS container has the default [vertical scaling](https://docs.jelastic.com/automatic-vertical-scaling) range up to **16 cloudlets** (equals to 2 GiB of RAM and 6.4 GHz of CPU per node) and a set of [load alerts](https://docs.jelastic.com/load-alerts) (to notify you when resource consumption comes close to instance threshold). In addition, connection to the cluster is secured with [Jelastic SSL](https://docs.jelastic.com/jelastic-ssl).
 
 Subsequently, any of these default settings can be adjusted - refer to the appropriate above-linked guides for the details.
 
