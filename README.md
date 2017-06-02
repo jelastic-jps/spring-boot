@@ -1,6 +1,6 @@
 # Auto-Scalable Spring Boot Cluster 
 
-Reliable [Spring Boot](https://projects.spring.io/spring-boot/) Сluster with preconfigured alerts on high load and smart auto-scaling configurations.
+Reliable [Spring Boot](https://projects.spring.io/spring-boot/) Сluster with preconfigured alerts on high load and auto-scaling configurations.
 
 ## Spring Boot Cluster Topology
 
@@ -28,20 +28,19 @@ In case you’d like to change the conditions of automatic scaling, adjust the a
 
 ## How to Install Auto-Scalable Spring Boot Cluster
 
-The Spring Boot Cluster package deployment is completely automated and available for everyone:
-- if having no Jelastic account yet, click **Deploy to Jelastic** to register for a trial period and install the package
+In order to get Spring Boot Cluster solution instantly deployed, click the **Deploy to Jelastic** button below and specify your email address within the opened widget. Then choose one of the [Jelastic Public Cloud](https://jelastic.cloud) providers (in case you don’t have an account at the appropriate platform, it will be created automatically) and click **Install**.
 
-   [![Deploy](images/deploy-to-jelastic.png)](https://jelastic.com/install-application/?manifest=https://raw.githubusercontent.com/jelastic-jps/spring-boot/master/manifest.jps)
+[![Deploy](images/deploy-to-jelastic.png)](https://jelastic.com/install-application/?manifest=https://raw.githubusercontent.com/jelastic-jps/spring-boot/master/manifest.jps)
 
-- if you are already registered, log in to the Jelastic dashboard and [import](https://docs.jelastic.com/environment-import) a link to the [**_manifest.jps_**](https://github.com/jelastic-jps/spring-boot/blob/master/manifest.jps) file from the current repository
+To install the package manually, log in to the Jelastic dashboard with your credentials and [import](https://docs.jelastic.com/environment-import) link to the [**_manifest.jps_**](https://github.com/jelastic-jps/spring-boot/blob/master/manifest.jps) file (alternatively, you can locate this package via [Jelastic Marketplace](https://docs.jelastic.com/marketplace), *Clusters* section).
 
-   ![spring-boot-cluster-installation](images/spring-boot-cluster-installation.png)
+![spring-boot-cluster-installation](images/spring-boot-cluster-installation.png)
 
 Fill in the installation form with the following data: 
 - **_Nodes in Cluster_** - number of application servers your cluster should include
 - choose deployment type:
    - **_Clean Cluster_** - to create a bare cluster with no application inside
-   - **_Deploy JAR_** - to deploy *JAR* application from the linked repo (where the default project is a message repository)
+   - **_Deploy JAR_** - to deploy *JAR* application from the linked repo (where the default project is the in-memory repository for creating and storing messages)
 
 Type *Environment* name and, optionally, *Display Name* ([alias](https://docs.jelastic.com/environment-aliases)). Also, select the preferable [region](https://docs.jelastic.com/environment-regions) (if several ones are available) and click **Install**.
 
