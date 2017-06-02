@@ -22,7 +22,7 @@ The Spring Boot Cluster package automatically adjusts the number of application 
 - +1 node if RAM/CPU usage is >70% for at least 5 minutes (up to 10 instances)
 - -1 node if RAM/CPU usage is <40% for at least 5 minutes (but not less than a number of servers specified during installation)
 
-The appropriate modifications are automatically applied to add or remove Spring Boot nodes, whilst you receive an [alert notification](https://docs.jelastic.com/load-alerts) about the corresponding load change.
+The appropriate modifications are automatically applied to add or remove Spring Boot nodes, whilst you receive an email message about the corresponding scaling operation.    
 
 In case you’d like to change the conditions of automatic scaling, adjust the appropriate triggers by following the [Automatic Horizontal Scaling](https://docs.jelastic.com/automatic-horizontal-scaling) guide.
 
