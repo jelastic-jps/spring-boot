@@ -12,7 +12,7 @@ The current Spring Boot solution is implemented using the following software sta
 - *Load balancer* (LB) - dockerized template with **_NGINX 1.10.1_**
 - *Application server* (AS) - native template with **_Spring Boot 1.5.2_** on top of **_Java 8_** 
 
-Herewith, each LB and AS container has the default [vertical scaling](https://docs.jelastic.com/automatic-vertical-scaling) range up to **16 cloudlets** (equals to 2 GiB of RAM and 6.4 GHz of CPU per node) and a set of [load alerts](https://docs.jelastic.com/load-alerts) (to notify you when resource consumption comes close to instance threshold). In addition, connection to the cluster is secured with [Jelastic SSL](https://docs.jelastic.com/jelastic-ssl).
+Herewith, each LB and AS container has the default [vertical scaling](https://docs.jelastic.com/automatic-vertical-scaling) limit up to **16 cloudlets** (equals to 2 GiB of RAM and 6.4 GHz of CPU per node) and a set of [load alerts](https://docs.jelastic.com/load-alerts) (to notify you when resource consumption comes close to instance threshold). In addition, connection to the cluster is secured with [Jelastic SSL](https://docs.jelastic.com/jelastic-ssl).
 
 Subsequently, any of these default settings can be adjusted - refer to the appropriate above-linked guides for the details.
 
@@ -31,16 +31,16 @@ In case you’d like to change the conditions of automatic scaling, adjust the a
 The Spring Boot Cluster package deployment is completely automated and available for everyone:
 - if having no Jelastic account yet, click **Deploy to Jelastic** to register for a trial period and install the package
 
-[![Deploy](images/deploy-to-jelastic.png)](https://jelastic.com/install-application/?manifest=https://raw.githubusercontent.com/jelastic-jps/spring-boot/master/manifest.jps)
+   [![Deploy](images/deploy-to-jelastic.png)](https://jelastic.com/install-application/?manifest=https://raw.githubusercontent.com/jelastic-jps/spring-boot/master/manifest.jps)
 
 - if you are already registered, log in to the Jelastic dashboard and [import](https://docs.jelastic.com/environment-import) a link to the [**_manifest.jps_**](https://github.com/jelastic-jps/spring-boot/blob/master/manifest.jps) file from the current repository
 
-![spring-boot-cluster-installation](images/spring-boot-cluster-installation.png)
+   ![spring-boot-cluster-installation](images/spring-boot-cluster-installation.png)
 
 Fill in the installation form with the following data: 
 - **_Nodes in Cluster_** - number of application servers your cluster should include
 - choose deployment type:
-   - **_Clean Cluster_** - to create bare cluster with no application inside
+   - **_Clean Cluster_** - to create a bare cluster with no application inside
    - **_Deploy JAR_** - to deploy *JAR* application from the linked repo (where the default project is a message repository)
 
 Type *Environment* name and, optionally, *Display Name* ([alias](https://docs.jelastic.com/environment-aliases)). Also, select the preferable [region](https://docs.jelastic.com/environment-regions) (if several ones are available) and click **Install**.
