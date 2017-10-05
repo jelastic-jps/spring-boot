@@ -40,7 +40,7 @@
     "nodes": [{
         "nodeType": "nginx",
         "cloudlets": 16,
-        "nodeGroup": "lb"
+        "nodeGroup": "bl"
     }, {
         "nodeType": "springboot",
         "cloudlets": 16,
