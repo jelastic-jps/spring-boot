@@ -39,11 +39,11 @@
     "engine": "java8",
     "nodes": [{
         "nodeType": "nginx",
-        "cloudlets": 16,
+        "cloudlets": 8,
         "nodeGroup": "bl"
     }, {
         "nodeType": "springboot",
-        "cloudlets": 16,
+        "cloudlets": 8,
         "nodeGroup": "cp",
         "count": "${settings.nodes}"
     }],
