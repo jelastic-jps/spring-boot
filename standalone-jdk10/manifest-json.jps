@@ -1,0 +1,10 @@
+{
+  "type": "install",
+  "name": "SpringBoot on Java 10",
+  "logo": "https://raw.githubusercontent.com/jelastic-jps/spring-boot/master/images/spring-boot-logo.png",
+  "nodes": {
+    "image": "jelastic/springboot:jdk-10",
+    "nodeGroup": "cp",
+    "cloudlets": 16
+  }
+}
