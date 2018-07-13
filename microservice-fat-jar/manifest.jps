@@ -1,0 +1,53 @@
+---
+type: install
+version: 1.4
+id: spring-boot-fat-jar
+name: Spring Boot Fat Jar Microservice
+baseUrl: https://raw.githubusercontent.com/jelastic-jps/spring-boot/master
+logo: /images/spring-boot-logo.png
+
+globals:
+  projectName: myapp
+  gitUrl: https://github.com/siruslan/java-packaging-demo.git
+  buildDir: /var/lib/jelastic/PROJECTS/${globals.projectName}
+  workDir: spring-boot-fat
+  
+ssl: true  
+   
+nodes:
+- count: 1
+  cloudlets: 16
+  nodeGroup: build
+  nodeType: maven
+  
+- count: 1
+  cloudlets: 8
+  nodeGroup: cp
+  nodeType: javaengine
+  restartDelay: 15
+      
+onInstall:
+- addBuildProject
+- buildDeployProject
+  
+actions:  
+  addBuildProject:
+    api: env.deployment.AddBuildProject
+    name: ${globals.projectName}
+    nodeId: ${nodes.build.first.id}
+    repo: ${globals.gitUrl}
+    settings:
+      workDir: ${globals.workDir}
+    deployment:
+      envName: ${env.envName}
+      nodeGroup: cp      
+    hooks: ${globals.hooks:} 
+  
+  buildDeployProject:
+    api: env.deployment.BuildDeployProject
+    nodeId: ${nodes.build.first.id}
+    project: ${globals.projectName}
+    skipUpload: true
+      
+success: /text/success-fat.md
+startPage: api/greeting      
