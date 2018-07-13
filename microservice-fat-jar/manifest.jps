@@ -5,13 +5,24 @@ id: spring-boot-fat-jar
 name: Spring Boot Fat Jar Microservice
 baseUrl: https://raw.githubusercontent.com/jelastic-jps/spring-boot/master
 logo: /images/spring-boot-logo.png
+homepage: https://github.com/jelastic-jps/spring-boot/tree/master/microservice-fat-jar
+description: /text/description-fat-jar.md 
 
 globals:
   projectName: myapp
-  gitUrl: https://github.com/siruslan/java-packaging-demo.git
   buildDir: /var/lib/jelastic/PROJECTS/${globals.projectName}
-  workDir: spring-boot-fat
   
+settings:
+  fields:
+    - type: string
+      caption: Git Repo
+      name: gitUrl
+      default: https://github.com/siruslan/java-packaging-demo.git
+    - type: string
+      caption: Work Directory
+      name: workDir
+      default: spring-boot-fat
+ 
 ssl: true  
    
 nodes:
@@ -35,9 +46,9 @@ actions:
     api: env.deployment.AddBuildProject
     name: ${globals.projectName}
     nodeId: ${nodes.build.first.id}
-    repo: ${globals.gitUrl}
+    repo: ${settings.gitUrl}
     settings:
-      workDir: ${globals.workDir}
+      workDir: ${settings.workDir}
     deployment:
       envName: ${env.envName}
       nodeGroup: cp      
@@ -49,5 +60,5 @@ actions:
     project: ${globals.projectName}
     skipUpload: true
       
-success: /text/success-fat.md
+success: /text/success-fat-jar.md
 startPage: api/greeting      
