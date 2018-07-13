@@ -18,6 +18,8 @@ settings:
       caption: Git Repo
       name: gitUrl
       default: https://github.com/siruslan/java-packaging-demo.git
+      required: true
+      
     - type: string
       caption: Work Directory
       name: workDir
