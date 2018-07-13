@@ -1,1 +1,1 @@
-Build of your microservice is in progress. After completion the binary archive will be automatically deployed to **[${env.protocol}://${env.domain}/api/greeting](${env.protocol}://${env.domain}/api/greeting)**. You can track the progress in **Tasks** panel below.  
+Build of your microservice is in progress. After completion the binary archive will be automatically deployed to **[${env.protocol}://${env.domain}/api/greeting](${env.protocol}://${env.domain}/api/greeting)**. You can track the progress in the **Tasks** panel.  
