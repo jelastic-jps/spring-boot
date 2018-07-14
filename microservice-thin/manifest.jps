@@ -1,0 +1,63 @@
+---
+type: install
+version: 1.4
+id: spriing-boot-thin
+name: Spring Boot Thin Microservice
+baseUrl: https://raw.githubusercontent.com/jelastic-jps/spring-boot/master
+logo: /images/spring-boot-logo.png
+homepage: https://github.com/jelastic-jps/spring-boot/tree/master/microservice-thin
+description: /text/description-thin.md 
+
+globals:
+  projectName: myapp
+
+settings:
+  fields:
+    - type: string
+      caption: Git Repo
+      name: gitUrl
+      default: https://github.com/siruslan/java-packaging-demo.git
+      required: true
+      
+    - type: string
+      caption: Work Directory
+      name: workDir
+      default: spring-boot-thin
+ 
+ssl: true  
+
+nodes:
+- count: 1
+  cloudlets: 16
+  nodeGroup: build
+  nodeType: maven
+
+- count: 1
+  cloudlets: 8
+  nodeType: springboot
+  nodeGroup: cp
+
+onInstall:
+  - addBuildProject        
+  - buildDeployProject
+
+actions:
+  addBuildProject:
+    - api: env.deployment.AddBuildProject
+      name: ${globals.projectName}
+      nodeId: ${nodes.build.first.id}
+      repo: ${settings.gitUrl}
+      settings:
+        workDir: ${settings.workDir}
+      deployment:
+        envName: ${env.envName}
+        nodeGroup: cp
+  
+  buildDeployProject:
+    api: env.deployment.BuildDeployProject
+    nodeId: ${nodes.build.first.id}
+    project: ${globals.projectName}
+    skipUpload: true
+
+success: /text/success-thin.md
+startPage: api/greeting      
