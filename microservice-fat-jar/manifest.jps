@@ -10,7 +10,6 @@ description: /text/description-fat-jar.md
 
 globals:
   projectName: myapp
-  buildDir: /var/lib/jelastic/PROJECTS/${globals.projectName}
   
 settings:
   fields:
