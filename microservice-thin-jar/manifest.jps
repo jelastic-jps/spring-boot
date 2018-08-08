@@ -8,6 +8,11 @@ logo: /images/spring-boot-logo.png
 homepage: https://github.com/jelastic-jps/spring-boot/tree/master/microservice-thin-jar
 description: /text/description-thin-jar.md 
 
+categories:
+  - apps/dev-and-admin-tools
+  - apps/microservices
+  - apps/others
+
 globals:
   projectName: myapp
 
