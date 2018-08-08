@@ -11,7 +11,7 @@ description: /text/description-thin-jar.md
 categories:
   - apps/dev-and-admin-tools
   - apps/microservices
-  - apps/others
+  - apps/other
 
 globals:
   projectName: myapp
