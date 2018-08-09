@@ -6,16 +6,16 @@ Import the required manifest using the link from GitHub:
 ![import manifest](../images/import.png)
 If required, change installation settings such as environment name or Git repository link to a custom Spring Boot project. Then press Install.
 
-![install](/home/lwo/Documents/gitlab/spring-boot/images/install.png) 
+![install](../images/install.png)
 
 Afterward, make sure that application is up and running by pressing Open in browser button. 
 
-![application](/home/lwo/Documents/gitlab/spring-boot/images/application.png) 
+![application](../images/application.png) 
 
 ### Deploy Now
 
 Press Deploy to get an account and deploy to a certified Jelastic partner from the distributed network of independent data center providers.
-[![deploy](/home/lwo/Documents/gitlab/spring-boot/images/deploy-to-jelastic.png)](https://jelastic.com/install-application/?manifest=https://raw.githubusercontent.com/jelastic-jps/spring-boot/master/microservice-fat-jar/manifest.jps) 
+[![deploy](../images/deploy-to-jelastic.png)](https://jelastic.com/install-application/?manifest=https://raw.githubusercontent.com/jelastic-jps/spring-boot/master/microservice-fat-jar/manifest.jps) 
 
 ### Managed Hosting Business on Spring Boot Based Microservices
 
