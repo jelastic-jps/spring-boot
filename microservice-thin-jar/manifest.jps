@@ -2,7 +2,7 @@
 type: install
 version: 1.4
 id: spriing-boot-thin-jar
-name: Spring Boot Thin Jar Microservice
+name: Spring Boot Thin Jar Builder
 baseUrl: https://raw.githubusercontent.com/jelastic-jps/spring-boot/master
 logo: /images/spring-boot-logo.png
 homepage: https://github.com/jelastic-jps/spring-boot/tree/master/microservice-thin-jar
