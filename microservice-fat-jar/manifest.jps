@@ -6,7 +6,9 @@ name: Spring Boot Fat Jar Builder
 baseUrl: https://raw.githubusercontent.com/jelastic-jps/spring-boot/master
 logo: /images/spring-boot-logo.png
 homepage: https://github.com/jelastic-jps/spring-boot/tree/master/microservice-fat-jar
-description: /text/description-fat-jar.md 
+description: 
+  text: /text/description-fat-jar.md 
+  short: This package consists of Maven and Spring Boot framework inside Java Engine node. It automates building a sample Java project as Fat (or so-called Uber) Jar to run it as a microservice
 
 categories:
   - apps/dev-and-admin-tools
