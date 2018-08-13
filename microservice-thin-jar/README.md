@@ -3,15 +3,21 @@
 Import the required manifest using the link from GitHub:
 [https://github.com/jelastic-jps/spring-boot/blob/master/microservice-thin-jar/manifest.jps](https://github.com/jelastic-jps/spring-boot/blob/master/microservice-thin-jar/manifest.jps)
 
-![import manifest](../images/import-thin.png)
+<p align="left"> 
+<img src="../images/import-thin.png" width="500">
+</p>
 
 If required, change installation settings such as environment name or Git repository link to a custom Spring Boot project. Then press *Install*.
 
-![install](../images/install-thin.png)
+<p align="left"> 
+<img src="../images/install-thin.png" width="500">
+</p>
 
 Afterward, make sure that application is up and running by pressing *Open in browser* button. 
 
-![application](../images/application-thin.png) 
+<p align="left"> 
+<img src="../images/application-thin.png" width="500">
+</p> 
 
 ### Deploy Now
 

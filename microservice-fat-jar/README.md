@@ -3,15 +3,21 @@
 Import the required manifest using the link from GitHub:
 [https://github.com/jelastic-jps/spring-boot/blob/master/microservice-fat-jar/manifest.jps](https://github.com/jelastic-jps/spring-boot/blob/master/microservice-fat-jar/manifest.jps)
 
-![import manifest](../images/import.png)
+<p align="left"> 
+<img src="../images/import.png" width="500">
+</p>
 
 If required, change installation settings such as environment name or Git repository link to a custom Spring Boot project. Then press *Install*.
 
-![install](../images/install.png)
+<p align="left"> 
+<img src="../images/install.png" width="500">
+</p>
 
 Afterward, make sure that application is up and running by pressing *Open in browser* button. 
 
-![application](../images/application.png) 
+<p align="left"> 
+<img src="../images/application.png" width="500">
+</p>
 
 ### Deploy Now
 
