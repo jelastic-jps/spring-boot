@@ -37,7 +37,6 @@ If you have Jelastic account, log in to the dashboard and **Import** the require
 Fill in the installation form with the following data:
 
 - *Nodes in Cluster* - a number of application servers your cluster should include
-
 - Choose deployment type:
    - *Clean Cluster* - to create a bare cluster with no application inside
    - *Deploy JAR* - to deploy *JAR* application from the specified custom repository
