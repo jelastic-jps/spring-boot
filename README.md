@@ -1,4 +1,4 @@
-<p align="left"> 
+<p align="center"> 
 <img style="padding: 0 15px; float: left;" src="images/spring-boot-logo.png" width="70">
 </p>
 
