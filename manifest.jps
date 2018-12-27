@@ -1,71 +1,57 @@
-{
-    "jpsType": "install",
-    "jpsVersion": "1.0",
-    "id": "spring-boot-cluster",
-    "logo": "https://raw.githubusercontent.com/jelastic-jps/spring-boot/master/images/spring-boot-logo.png",
-    "description": "Pre-configured and ready-to-work Spring Boot Cluster with auto scaling triggers. By default connection to the cluster is secured by Jelastic SSL.",
-    "name": "Auto Scalable Spring Boot Cluster",
-    "categories": [
-			"apps/clusters"
-	],
-    "settings": {
-        "fields": [{
-            "type": "spinner",
-            "name": "nodes",
-            "caption": "Nodes in Cluster",
-            "min": 1,
-            "max": 10,
-            "default": 2
-        }, {
-            "name": "state",
-            "type": "radio-fieldset",
-            "values": {
-                "clean": "Clean Cluster",
-                "deploy": "Deploy JAR"
-            },
-            "default": "clean",
-            "showIf": {
-                "deploy": {
-                    "name": "jar",
-                    "type": "string",
-                    "caption": "JAR Url",
-                    "default": "https://raw.githubusercontent.com/jelastic-jps/spring-boot/master/jar/spring-boot-demo.jar",
-                    "required": true,
-                    "vtype": "url"
-                }
-            }
-        }]
-    },
-    "engine": "java8",
-    "nodes": [{
-        "nodeType": "nginx",
-        "cloudlets": 8,
-        "nodeGroup": "bl"
-    }, {
-        "nodeType": "springboot",
-        "cloudlets": 8,
-        "nodeGroup": "cp",
-        "count": "${settings.nodes}"
-    }],
-    "ssl": true,
-    "onInstall": [{
-        "if ('${settings.state}' == 'deploy')": {
-            "deploy": {
-                "archive": "${settings.jar}",
-                "name": "jar",
-                "context": "ROOT"
-            }
-        }
-    }, {
-        "script": "https://raw.githubusercontent.com/jelastic-jps/spring-boot/master/scripts/autoscaling-triggers.js",
-        "params": {
-            "nodeGroup": "cp",
-            "upLimit": "10",
-            "downLimit": "${settings.nodes}"
-        }
-    }],
-    "success": {
-        "text": "The created Spring Boot cluster is available via <a href='${env.url}' target='_blank'>${env.envName}</a><br/><br/>If something does not work as expected, please check the logs for more details or submit a question to <a href='https://stackoverflow.com/questions/tagged/jelastic' target='_blank'>Jelastic community</a>",
-        "email": "The created Spring Boot cluster is available via <a href='${env.url}' target='_blank'>${env.envName}</a><br/><br/>If something does not work as expected, please check the logs for more details or submit a question to <a href='https://stackoverflow.com/questions/tagged/jelastic' target='_blank'>Jelastic community</a>"
-    }
-}
+---
+type: install
+id: spring-boot-cluster
+baseUrl: https://raw.githubusercontent.com/jelastic-jps/spring-boot/master
+logo: /images/spring-boot-logo.png
+description: /text/description.md
+name: Auto Scalable Spring Boot Cluster
+categories:
+- apps/clusters
+
+settings:
+  fields:
+    - type: spinner
+      name: nodes
+      caption: Nodes in Cluster
+      min: 1
+      max: 10
+      default: 2
+    - name: state
+      type: radio-fieldset
+      values:
+        clean: Clean Cluster
+        deploy: Deploy JAR
+      default: clean
+      showIf:
+        deploy:
+          name: jar
+          type: string
+          caption: JAR Url
+          default: https://raw.githubusercontent.com/jelastic-jps/spring-boot/master/jar/spring-boot-demo.jar
+          required: true
+          vtype: url
+nodes:
+  - nodeType: nginx
+    cloudlets: 8
+    nodeGroup: bl
+  - nodeType: springboot
+    cloudlets: 8
+    nodeGroup: cp
+    count: ${settings.nodes}
+
+skipNodeEmails: true
+
+onBeforeInit: return {result:0, ssl:!!jelastic.billing.account.GetQuotas('environment.jelasticssl.enabled').array[0].value}
+
+onInstall:
+  - if ('${settings.state}' == 'deploy'):
+      deploy:
+        archive: "${settings.jar}"
+        name: jar
+        context: ROOT
+  - script: /scripts/autoscaling-triggers.js
+    params:
+      nodeGroup: cp
+      upLimit: 10
+      downLimit: ${settings.nodes}
+success: /text/success.md
