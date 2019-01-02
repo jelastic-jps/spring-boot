@@ -1,6 +1,6 @@
 ---
 type: install
-version: 1.6.1
+version: 1.3
 id: spring-boot-cluster
 baseUrl: https://raw.githubusercontent.com/jelastic-jps/spring-boot/master
 logo: /images/spring-boot-logo.png
