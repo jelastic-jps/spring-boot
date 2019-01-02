@@ -47,7 +47,7 @@ onBeforeInit: return {result:0, ssl:!!jelastic.billing.account.GetQuotas('enviro
 onInstall:
   - if ('${settings.state}' == 'deploy'):
       deploy:
-        archive: "${settings.jar}"
+        archive: ${settings.jar}
         name: jar
         context: ROOT
   - script: /scripts/autoscaling-triggers.js
