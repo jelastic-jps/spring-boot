@@ -13,7 +13,6 @@ description:
 categories:
   - apps/dev-and-admin-tools
   - apps/microservices
-  - apps/other
 
 globals:
   projectName: myapp
