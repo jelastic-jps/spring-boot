@@ -1,4 +1,3 @@
----
 type: install
 version: 1.4
 id: spriing-boot-thin-jar
@@ -7,8 +6,8 @@ baseUrl: https://raw.githubusercontent.com/jelastic-jps/spring-boot/master
 logo: /images/spring-boot-logo.png
 homepage: https://github.com/jelastic-jps/spring-boot/tree/master/microservice-thin-jar
 description: 
-  text: /text/description-thin-jar.md 
-  short: This package consists of Maven and Spring Boot framework inside Java Engine node. It automates building a sample Java project as Thin Jar to run it as a microservice
+    text: /text/description-thin-jar.md 
+    short: This package consists of Maven and Spring Boot framework inside Java Engine node. It automates building a sample Java project as Thin Jar to run it as a microservice
 
 categories:
   - apps/dev-and-admin-tools
@@ -37,11 +36,13 @@ nodes:
   cloudlets: 16
   nodeGroup: build
   nodeType: maven
+  tag: 3.5.4-openjdk-1.8.0_181
 
 - count: 1
   cloudlets: 8
   nodeType: springboot
   nodeGroup: cp
+  tag: openjdk-1.8.0_181
 
 onInstall:
   - addBuildProject        
@@ -66,4 +67,4 @@ actions:
     skipUpload: true
 
 success: /text/success-thin-jar.md
-startPage: api/greeting      
+startPage: api/greeting
