@@ -5,7 +5,7 @@ id: spring-boot-cluster
 baseUrl: https://raw.githubusercontent.com/jelastic-jps/spring-boot/master
 logo: /images/spring-boot-logo.png
 description: /text/description.md
-name: Auto Scalable Spring Boot Cluster
+name: Auto-Scalable Spring Boot Cluster
 categories:
 - apps/clusters
 
