@@ -1,4 +1,3 @@
----
 type: install
 version: 1.4
 id: spring-boot-fat-jar
@@ -37,12 +36,14 @@ nodes:
   cloudlets: 16
   nodeGroup: build
   nodeType: maven
+  tag: 3.5.4-openjdk-1.8.0_181
   
 - count: 1
   cloudlets: 8
   nodeGroup: cp
   nodeType: javaengine
   restartDelay: 15
+  tag: openjdk-1.8.0_212
       
 onInstall:
 - addBuildProject
@@ -68,4 +69,4 @@ actions:
     skipUpload: true
       
 success: /text/success-fat-jar.md
-startPage: api/greeting      
+startPage: api/greeting
