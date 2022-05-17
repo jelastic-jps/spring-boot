@@ -42,7 +42,7 @@ nodes:
   cloudlets: 8
   nodeType: springboot
   nodeGroup: cp
-  tag: openjdk-1.8.0_181
+  engine: openjdk8
 
 onInstall:
   - addBuildProject        
