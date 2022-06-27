@@ -21,7 +21,7 @@ settings:
     - type: string
       caption: Git Repo
       name: gitUrl
-      default: https://github.com/lazarenkoalexey/java-packaging-demo.git
+      default: https://github.com/jelastic/java-packaging-demo.git
       required: true
       
     - type: string
