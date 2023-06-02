@@ -43,12 +43,12 @@ nodes:
   engine: openjdk19
 
 onInstall:
-  - configureMaven
+  - configureApp
   - addBuildProject        
   - buildDeployProject
 
 actions:
-  configureMaven:
+  configureApp:
     cmd [build, cp]: |-
       VARIABLES_CONF="/opt/maven/conf/variables.conf";
       [ ! -f $VARIABLES_CONF ] && VARIABLES_CONF="/home/jelastic/conf/variables.conf"
