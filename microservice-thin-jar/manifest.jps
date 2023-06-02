@@ -43,10 +43,17 @@ nodes:
   engine: openjdk19
 
 onInstall:
+  - configureMaven
   - addBuildProject        
   - buildDeployProject
 
 actions:
+  configureMaven:
+    cmd [build, cp]: |-
+      VARIABLES_CONF="/opt/maven/conf/variables.conf";
+      [ ! -f $VARIABLES_CONF ] && VARIABLES_CONF="/home/jelastic/conf/variables.conf"
+      echo -e "-Dthin.debug=true\n-Dthin.repo=https://repo1.maven.org/maven2" >> $VARIABLES_CONF
+      
   addBuildProject:
     - api: env.deployment.AddBuildProject
       name: ${globals.projectName}
