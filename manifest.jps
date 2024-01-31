@@ -53,6 +53,6 @@ onInstall:
   - script: /scripts/autoscaling-triggers.js
     params:
       nodeGroup: cp
-      upLimit: 10
+      upLimit: 11
       downLimit: ${settings.nodes}
 success: /text/success.md
