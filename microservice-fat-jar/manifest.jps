@@ -36,14 +36,14 @@ nodes:
   cloudlets: 16
   nodeGroup: build
   nodeType: maven
-  engine: openjdk18
+  engine: openjdk21
   
 - count: 1
   cloudlets: 8
   nodeGroup: cp
   nodeType: javaengine
   restartDelay: 15
-  engine: openjdk18
+  engine: openjdk21
       
 onInstall:
 - addBuildProject
