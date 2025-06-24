@@ -28,7 +28,7 @@ settings:
           name: jar
           type: string
           caption: JAR Url
-          default: https://raw.githubusercontent.com/jelastic-jps/spring-boot/master/jar/spring-boot-demo.jar
+          default: https://github.com/dimkadt/spring-boot-sample-jelastic/releases/download/v3.0/spring-boot-sample-jelastic-3.0.0.jar
           required: true
           vtype: url
 nodes:
