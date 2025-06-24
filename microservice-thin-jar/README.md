@@ -21,10 +21,6 @@ Afterward, make sure that application is up and running by pressing *Open in bro
 
 ### Deploy Now
 
-Press Deploy to get an account and deploy to a certified Jelastic partner from the distributed network of independent data center providers.
+Press Deploy to get an account and deploy to a certified VAP from the distributed network of independent data center providers.
 
-[![deploy](../images/deploy-to-jelastic.png)](https://jelastic.com/install-application/?manifest=https://raw.githubusercontent.com/jelastic-jps/spring-boot/master/microservice-thin-jar/manifest.jps) 
-
-### Managed Hosting Business on Spring Boot Based Microservices
-
-To start offering this solution to your customers please follow to [Managed PaaS Hosting Business](https://jelastic.com/apaas/) 
+[![deploy](https://raw.githubusercontent.com/jelastic-jps/common/main/images/deploy-to-cloud.png)](https://www.virtuozzo.com/application-platform/?manifest=https://raw.githubusercontent.com/jelastic-jps/spring-boot/master/microservice-thin-jar/manifest.jps) 
